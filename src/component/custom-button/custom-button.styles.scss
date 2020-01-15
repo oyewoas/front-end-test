@@ -1,0 +1,12 @@
+.custom-button{
+    letter-spacing: 2px;
+    padding: 10px 40px;
+    color: blue;
+    background-color: white;
+    border: 2px solid blue;
+    &:hover{
+        color: white;
+        background-color: blue;
+    }
+
+}
