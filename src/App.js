@@ -6,16 +6,19 @@ import HomePage from './pages/homepage/homepage.component';
 import Footer from './component/footer/footer.componet';
 import SignInPage from './pages/sigin/signin.component';
 import ComparePage from './pages/compare/compare.component';
+import ResultPage from './pages/result/result.component';
 
 function App() {
   return (
     <div>
       <NavBar/>
-      <Switch>
-          <Route exact path='/' component={HomePage} /> 
-          <Route path='/signin' component={SignInPage} /> 
-          <Route path='/compare-submissions' component={ComparePage} /> 
-      </Switch>
+        <Switch>
+            <Route exact path='/' component={HomePage} /> 
+            <Route path='/signin' component={SignInPage} /> 
+            <Route path='/compare-submissions' component={ComparePage} /> 
+            <Route path='/submissions-result' component={ResultPage} /> 
+
+        </Switch>
       <Footer/>
     </div>
   );
