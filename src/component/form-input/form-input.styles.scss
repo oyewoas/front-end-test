@@ -28,7 +28,7 @@ $main-color: black;
       outline: none;
     }
 
-    &:focus ~ .form-input-label {
+    &:focus~.form-input-label {
       @include shrinkLabel();
     }
   }
@@ -36,6 +36,12 @@ $main-color: black;
   input[type='password'] {
     letter-spacing: 0.3em;
   }
+
+  input[type='file'] {
+    letter-spacing: 0.1em;
+    border-bottom: none;
+  }
+
 
   .form-input-label {
     color: $sub-color;

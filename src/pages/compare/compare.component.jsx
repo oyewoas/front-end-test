@@ -3,34 +3,67 @@ import React from 'react'
 import './compare.styles.scss'
 import CustomButton from '../../component/custom-button/custom-button.component'
 import FormInput from '../../component/form-input/form-input.component'
-import FileUploadInput from '../../component/file-upload-input/file-upload-input.component'
+import FORM_VALIDATION_RULES from '../../utils/form-validation-rules'
+import useFormValidation from '../../component/use-formvalidation/use-formvalidation.component'
+import { compareSubmissions } from '../../redux/compare/compare.actions'
+import { compareSubmissionsResult } from '../../services/compare.services'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 
-const ComparePage = () => (
-    <header className="compare-page">
-        <div className="container">
-            <div className="row">
-                <div className="col-md-1"></div>
-                <div className="col-md-5">
-                    <form>
-                        <FormInput label="First Student Name" name="first_student" type="text" value="" required/>
-                        <FileUploadInput title="Upload first student submission"/>
+const {compare} = FORM_VALIDATION_RULES
 
-                    </form>
-                </div>
-                <div className="col-md-5">
-                    <form>
-                        <FormInput label="Second Student Name" name="second_student" type="email" value="" required/>
-                        <FileUploadInput title="Upload second student submission"/>
-                    </form>
-                </div>
-                <div className="col-md-1"></div>
+const ComparePage = ({ compareSubmissions, history }) => {
 
-                <div className="col-md-12 text-center mt-5 pt-5">
-                    <CustomButton>Compare Submissions</CustomButton>
-                </div>
+    const initialFormState = { first_student_name: "", second_student_name: "", first_student_file: "", second_student_file: ""};
+
+    const compareFunction = () => {
+        compareSubmissionsResult(compareSubmissions, history)
+    }
+    
+    const {
+        handleSubmit,
+        handleChange,
+        values,
+        errors,
+        isSubmitting
+    } = useFormValidation(initialFormState, compare, compareFunction);
+
+
+    return(
+        <header className="compare-page">
+            <div className="container">
+                <form className="row" onSubmit={handleSubmit}>
+                    
+                    <div className="col-md-1"></div>
+                    <div className="col-md-5">
+                            <FormInput handleChange={handleChange}  label="First Student Name" name="first_student_name" type="text" value={values.first_student_name} required/>
+                            {errors.first_student_name && <p className="error-text">{errors.first_student_name}</p>}
+
+                            <FormInput handleChange={handleChange}  label="First Student File" name="first_student_file" type="file" value={values.first_student_file} required/>
+                            {errors.first_student_file && <p className="error-text">{errors.first_student_file}</p>}
+
+                    </div>
+                    <div className="col-md-5">
+                            <FormInput handleChange={handleChange}  label="Second Student Name" name="second_student_name" type="text" value={values.second_student_name} required/>
+                            {errors.second_student_name && <p className="error-text">{errors.second_student_name}</p>}
+
+                            <FormInput handleChange={handleChange}  label="Second Student File" name="second_student_file" type="file" value={values.second_student_file} required/>
+                            {errors.second_student_file && <p className="error-text">{errors.second_student_file}</p>}
+
+                    </div>
+                    <div className="col-md-1"></div>
+                    
+                    <div className="col-md-12 text-center mt-5">
+                        <CustomButton disabled={isSubmitting}>Compare</CustomButton>
+                    </div>
+                </form>
             </div>
-        </div>
-    </header>
-)
+        </header>
+    )
+}
 
-export default ComparePage
+
+const mapDispatchToProps = dispatch => ({
+    compareSubmissions: data => dispatch(compareSubmissions(data)),
+})
+export default withRouter(connect(null, mapDispatchToProps)(ComparePage))

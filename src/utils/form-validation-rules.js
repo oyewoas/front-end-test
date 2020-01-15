@@ -19,8 +19,34 @@ const login = (values) => {
     }
     return errors;
   }
+
+  const compare = (values) => {
+    // initialize errors object
+    let errors = {};
+  
+    // if errors exist for each field then add them to the errors object
+    if (!values.first_student_name) {
+      errors.first_student_name = "First Student Name is required";
+    }
+
+    if (!values.second_student_name) {
+      errors.second_student_name = "Second Student Name is required";
+    }
+
+    if (!values.first_student_file) {
+      errors.first_student_file = "First Student File is required";
+    }
+
+    if (!values.second_student_file) {
+      errors.second_student_file = "Second Student File is required";
+    }
+   
+    return errors;
+  }
+
   const FORM_VALIDATION_RULES = {
     login,
+    compare
   }
 
   export default FORM_VALIDATION_RULES

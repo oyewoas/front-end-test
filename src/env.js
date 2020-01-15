@@ -1,5 +1,9 @@
 
 
+import dotenv from 'dotenv'
+dotenv.config()
+console.log(process.env, 'eve')
+
 export default {
-    API_BASE_URL: process.env.API_BASE_URL,
+    REACT_APP_API_BASE_URL: process.env.REACT_APP_API_BASE_URL,
 };
