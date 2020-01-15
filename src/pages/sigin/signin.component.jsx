@@ -5,7 +5,7 @@ import FormInput from '../../component/form-input/form-input.component'
 import CustomButton from '../../component/custom-button/custom-button.component'
 
 
-const SignIn = () => (
+const SignInPage = () => (
     <div className="signin">
         <div className="container">
             <div className="row">
@@ -28,4 +28,4 @@ const SignIn = () => (
     </div>
 )
 
-export default SignIn
+export default SignInPage

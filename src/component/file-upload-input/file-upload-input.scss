@@ -1,0 +1,16 @@
+.blue{
+    color: blue;
+}
+
+section{
+    cursor: pointer;
+    &:hover{
+        opacity: 0.7;
+    }
+    .dropzone{
+        background-color: white;
+        padding-top: 20px;
+        padding-bottom: 5px;
+        border: dashed blue 1px;
+    }
+}
