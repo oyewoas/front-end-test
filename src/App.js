@@ -4,6 +4,7 @@ import './App.css';
 import NavBar from './component/navbar/navbar.compnent';
 import HomePage from './pages/homepage/homepage.component';
 import Footer from './component/footer/footer.componet';
+import SignIn from './pages/sigin/signin.component';
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
       <NavBar/>
       <Switch>
           <Route exact path='/' component={HomePage} /> 
+          <Route path='/signin' component={SignIn} /> 
+
       </Switch>
       <Footer/>
     </div>
