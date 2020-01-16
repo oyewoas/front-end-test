@@ -10,12 +10,12 @@ const HomePage = () => (
         <div className="container">
             <div className="row">
                 <div className="col-md-12 col-sm-12 col-lg-8 left-section">
-                    <h1 className="home-heading">Simply compare text submissions for similarity</h1>
-                    <Link to="/signin">
+                    <h1 className="home-heading animated fadeIn delay-1s">Simply compare text submissions for similarity</h1>
+                    <Link to="/signin" className="animated fadeIn delay-2s">
                         <CustomButton>Sign In</CustomButton>
                     </Link>
                 </div>
-                <div className="col-md-12 col-lg-4 col-sm-12 right-section">
+                <div className="col-md-12 col-lg-4 col-sm-12 right-section animated fadeIn delay-2s">
                    <Contrast className="img-fluid"/>
                 </div>
             </div>

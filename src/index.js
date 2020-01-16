@@ -8,6 +8,7 @@ import 'bootstrap/dist/js/bootstrap.min';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/normalize.css';
 import './index.css';
+import 'animate.css';
 
 import { Provider } from 'react-redux';
 import {store, persistor} from './redux/store';
