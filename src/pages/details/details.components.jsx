@@ -29,7 +29,7 @@ const ComparisonDetails = ({ history, match, currentComparison, getComparisonDet
                 }
                 <div className="row">
                     <div className="col-md-12 text-center mt-5">
-                        <CustomButton onClick={() => handleReRunComparison()}>Rerun Comparison</CustomButton>
+                        <CustomButton onClick={() => handleReRunComparison()}>Rerun</CustomButton>
                     </div>
                 </div>
             </div>

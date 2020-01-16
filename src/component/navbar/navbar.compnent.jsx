@@ -12,16 +12,16 @@ const NavBar = ({ logOutCurrentUser, currentUser, history }) => (
         <div className="container">
             <Link className="navbar-brand" to="/">Compare.TXT</Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
+                <span className="fas fa-bars"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 {
                     currentUser ? 
                     (
                         <div className="navbar-nav ml-auto">
-                            <div className="nav-item nav-link"> Hi {currentUser.name}</div>
                             <Link className="nav-item nav-link active" to="/compare-submissions">Compare</Link>
                             <Link className="nav-item nav-link" to="/history">History</Link>
+                            <div className="nav-item nav-link user-name"> Hi {currentUser.name}</div>
                             <div className="nav-item nav-link" onClick={() => userLogOut(logOutCurrentUser, history)}>Sign Out</div>
                         </div>
                     )

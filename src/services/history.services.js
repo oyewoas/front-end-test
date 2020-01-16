@@ -1,8 +1,9 @@
 import Axios from 'axios'
+import { API } from '../utils/api-constants'
 
 export const getHistory = async (actionFunction) => {
     try {
-        const response = await Axios.get(`https://2086c28b-a507-42a2-a4fc-e0b3551acb24.mock.pstmn.io/api/v1/history`)
+        const response = await Axios.get(API.HISTORY_API)
         actionFunction(response)
     } catch (error) {
         console.error(error)

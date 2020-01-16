@@ -1,46 +1,16 @@
 // Dimensions
-$page-width: 1400px;
-$header-padding: 70px;
-$section-padding: 100px;
-$header-height: 100vh;
-$navbar-collapse-height: 100vh;
-$navbar-collapse-padding: 100px;
-$header-margin-top: 100px;
-$logo-width: 80px;
-$font-weight-500: 500;
-$font-weight-300: 300;
-$font-style-normal: normal;
-$header-btn-border-radius: 25px;
-$header-btn-padding-lr: 30px;
-$header-btn-padding-tb: 10px;
-$header-img-height: 450px;
-$header-text-padding-top: 50px;
+$component-padding: 200px;
 
 
 // Typography
-$nav-link-font-size: 18px;
-$header-btn-font-size:20px;
-$nav-link-font-weight: 800;
-$heading-one-font-size: 48px;
-$heading-two-font-size: 35px;
-$heading-three-font-size: 20px;
-$paragraph-one-font-size: 22px;
-$paragraph-one-mobile-font-size: 18px;
-$paragraph-two-font-size: 18px;
-$paragraph-two-mobile-font-size: 16px;
-$footer-font-size: 14px;
-$small-text-font-size: 20px;
-$footer-paragraph-font-size: 16px;
-$footer-heading-font-size: 20px;
+
 
 // Colors
-$color-black: #000000;
-$color-white: #FFFFFF;
-$color-blue:#0F79D1;
-$color-black-1:#383838;
-$color-black-2:#37474F;
-$color-yellow: #FDCA01;
-$color-grey: #CCCCCC;
+
+$color-blue: blue;
+$color-white: white;
+$color-grey: rgba(184,184,184,0.74);
+$color-red: red;
 
 
 // Media queries

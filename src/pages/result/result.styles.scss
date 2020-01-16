@@ -1,9 +1,13 @@
+@import '../../assets/scss/abstracts/variables';
+@import '../../assets/scss/abstracts/mixins';
+
+
 .result-page{
-    padding: 200px 0;
+    padding: $component-padding 0;
     .result{
-        background-color: blue;
+        background-color: $color-blue;
         padding: 20px;
-        color: white;
+        color: $color-white;
         -webkit-box-shadow: 1px 11px 25px 11px rgba(184,184,184,0.74);
         -moz-box-shadow: 1px 11px 25px 11px rgba(184,184,184,0.74);
         box-shadow: 1px 11px 25px 11px rgba(184,184,184,0.74);
@@ -13,12 +17,17 @@
             padding: 0px;
             margin: 20px 0;
             font-family: 'Roboto', sans-serif;
+            @include respond(phone){
+                font-size: 70px;
+            }
         }
         .result-heading{
             font-size: 40px;
             padding: 0px;
             margin: 20px 0;
-
+            @include respond(phone){
+                font-size: 30px;
+            }
         }
     }
 }
