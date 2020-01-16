@@ -1,26 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
+import NavBar from './component/navbar/navbar.compnent';
+import HomePage from './pages/homepage/homepage.component';
+import Footer from './component/footer/footer.componet';
+import SignInPage from './pages/sigin/signin.component';
+import ComparePage from './pages/compare/compare.component';
+import ResultPage from './pages/result/result.component';
+import HistoryPage from './pages/history/history.component'
+import { connect } from 'react-redux';
+import { selectCurrentUser } from './redux/user/user.selector';
+import { createStructuredSelector } from 'reselect';
+import ProtectedRoute from './ProtectedRoute';
+import ComparisonDetails from './pages/details/details.components';
 
-function App() {
+const App = ({ currentUser }) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavBar/>
+        <Switch>
+            <Route exact path='/'  render={() => currentUser ? (<Redirect to="/compare-submissions"/>) : (<HomePage/>)} /> 
+            <Route path='/signin' render={() => currentUser ? (<Redirect to="/compare-submissions"/>) : (<SignInPage/>)} /> 
+            <ProtectedRoute currentUser={currentUser} path='/compare-submissions' component={ComparePage} /> 
+            <ProtectedRoute currentUser={currentUser} path='/submissions-result' component={ResultPage} /> 
+            <ProtectedRoute currentUser={currentUser} exact path='/history' component={HistoryPage} /> 
+            <ProtectedRoute currentUser={currentUser} path='/history/:historyId' component={ComparisonDetails} />
+        </Switch>
+      <Footer/>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+  
+})
+
+export default connect(mapStateToProps)(App);
