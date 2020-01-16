@@ -10,7 +10,7 @@ const userReducer = (state = INITIAL_STATE, action) => {
         case userActionTypes.SET_CURRENT_USER:
             return {
                 ...state,
-                currentUser: action.payload
+                currentUser: action.payload.data
             }
         case userActionTypes.LOG_OUT_CURRENT_USER:
             return {...state, 

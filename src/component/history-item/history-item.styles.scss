@@ -1,0 +1,15 @@
+.table-row{
+    
+    &:hover{
+        color: white !important;
+        opacity: 0.9;
+        cursor: pointer;
+    }
+
+    .btn-details {
+        padding: 5px 10px;
+        background-color: white;
+        color: blue;
+        text-decoration: none;
+    }
+}

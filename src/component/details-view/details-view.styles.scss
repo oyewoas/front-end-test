@@ -1,0 +1,26 @@
+.details-content{
+    background-color: blue;
+    padding: 20px;
+    color: white;
+    -webkit-box-shadow: 1px 11px 25px 11px rgba(184,184,184,0.74);
+    -moz-box-shadow: 1px 11px 25px 11px rgba(184,184,184,0.74);
+    box-shadow: 1px 11px 25px 11px rgba(184,184,184,0.74);
+    letter-spacing: 2px;
+    .details-percentage{
+        font-size: 100px;
+        padding: 0px;
+        margin: 0px;
+        font-family: 'Roboto', sans-serif;
+    }
+    hr{
+        background-color: white;
+    }
+    .details-heading{
+        padding-top: 30px;
+        font-size: 20px;
+        font-weight: bold;
+        margin: 0px;
+        text-decoration: underline;
+
+    }
+}

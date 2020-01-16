@@ -19,7 +19,7 @@ const NavBar = ({ logOutCurrentUser, currentUser, history }) => (
                     currentUser ? 
                     (
                         <div className="navbar-nav ml-auto">
-                            <div className="nav-item nav-link"> Welcome {currentUser.data.name}</div>
+                            <div className="nav-item nav-link"> Hi {currentUser.name}</div>
                             <Link className="nav-item nav-link active" to="/compare-submissions">Compare</Link>
                             <Link className="nav-item nav-link" to="/history">History</Link>
                             <div className="nav-item nav-link" onClick={() => userLogOut(logOutCurrentUser, history)}>Sign Out</div>
